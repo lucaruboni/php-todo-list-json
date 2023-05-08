@@ -10,7 +10,9 @@ Solo a questo punto sarà utile passare alla lettura/scrittura della lista da un
 Bonus -->
 
 <?php
-
+    $taskString = file_get_contents('todo_list.json');
+    $todoList = json_decode($taskString, true);
+    var_dump($todoList);
 
 
 
@@ -31,9 +33,10 @@ Bonus -->
 
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <div id="app">
-    <h1>{{message}}</h1>
+   
 </div>
 
 <script src="app.js"></script>
