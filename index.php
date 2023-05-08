@@ -9,15 +9,6 @@ Lo step successivo è quello di “testare" l'invio di un nuovo task. Iniziate p
 Solo a questo punto sarà utile passare alla lettura/scrittura della lista da un file JSON.
 Bonus -->
 
-<?php
-    $taskString = file_get_contents('todo_list.json');
-    $todoList = json_decode($taskString, true);
-    var_dump($todoList);
-
-
-
-?>
-
 
 
 <!DOCTYPE html>
@@ -26,16 +17,40 @@ Bonus -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PHP to do List</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous'>
 </head>
 <body>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
 <div id="app">
+
+<div class="container">
+
+    <div class="text_container text-center">
+    <h1>
+        To-do List
+    </h1>
+    </div>
+
+    <div class="row">
+
+        <div class="col d-flex justify-content-center mt-5">
+
+            
+
+            <ul>
+                <li v-for="task in tasks">{{task}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
    
 </div>
 
