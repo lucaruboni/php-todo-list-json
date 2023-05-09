@@ -1,11 +1,6 @@
 <?php
 
-if (isset($_POST['done'])) {
-
-  $task = [
-    "text" => $_POST['task'],
-    "done" => $_POST['done']
-  ];
+if (isset($_POST['index'])) {
 
   // read the json file with file_get_contents
   $tasks_string = file_get_contents('todo_list.json');
@@ -13,7 +8,8 @@ if (isset($_POST['done'])) {
   $tasks_array = json_decode($tasks_string, true);
 
   //invert tasks or not
-  $_POST['done'] = !$_POST['done'];
+  $array_index = $_POST['index'];
+  $tasks_array[$array_index]['done'] = !$tasks_array[$array_index]['done'];
 
   // convert the array back into a json string
   $new_tasks_json_string = json_encode($tasks_array);
@@ -23,5 +19,4 @@ if (isset($_POST['done'])) {
   header('Content-Type: application/json');
   // echo json
   echo $new_tasks_json_string;
-  }
-    ?>
+}

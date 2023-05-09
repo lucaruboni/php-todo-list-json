@@ -37,11 +37,11 @@ createApp({
 
     },
 
-/*     delete_task() {
-        console.log('add a new task to the list');
+     delete_task(index) {
+        
   
         const data = {
-          tasks: this.data
+            index: index
         }
   
         axios.post(
@@ -58,25 +58,25 @@ createApp({
           })
   
       },
- */
-    task_done(index){
+ 
+    task_toggle(index){
       
         const data = {
-            done: this.data
-          }
+            index: index
+        }
     
-          axios.post(
-            'taskDone.php',
-            data,
-            {
-              headers: { 'Content-Type': 'multipart/form-data' }
-            }).then(response => {
-              console.log(response);
-              this.tasks = response.data
-            })
-            .catch(error => {
-              console.error(error.message);
-            })
+        axios.post(
+        'taskToggle.php',
+        data,
+        {
+            headers: { 'Content-Type': 'multipart/form-data' }
+        }).then(response => {
+            console.log(response);
+            this.tasks = response.data
+        })
+        .catch(error => {
+            console.error(error.message);
+        })
     }
   },
   mounted(){

@@ -1,4 +1,10 @@
-input{
+.my_input{
     width: 300px;
-    height: 60px;
+    
+}
+
+#button_my{
+    width: 150px;
+    margin-left: 1rem;
+   
 }
