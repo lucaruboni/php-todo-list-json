@@ -36,10 +36,16 @@ createApp({
         })
 
     },
+
 /*     delete_task() {
-        console.log(this.delete_task)
+        console.log('add a new task to the list');
+  
+        const data = {
+          tasks: this.data
+        }
+  
         axios.post(
-          'storeTask.php',
+          'deleteTask.php',
           data,
           {
             headers: { 'Content-Type': 'multipart/form-data' }
@@ -51,8 +57,8 @@ createApp({
             console.error(error.message);
           })
   
-      }, */
-
+      },
+ */
     task_done(){
       
         const data = {
