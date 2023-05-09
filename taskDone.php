@@ -10,6 +10,9 @@ if ($_POST['done'] === true) {
   $tasks_array = json_decode($tasks_string, true);
 
   //invert done or not
+  foreach ($_POST['done'] as $key => $value) {
+    $value = !$value;
+  };
 
 
   // convert the array back into a json string

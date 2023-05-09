@@ -62,7 +62,7 @@ createApp({
     task_done(){
       
         const data = {
-            done: this.data
+            done: this.data.done
           }
     
           axios.post(
