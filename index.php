@@ -48,7 +48,11 @@ Bonus -->
           
 
             <ul>
-                <li v-for="task in tasks">{{task.text}}</li>
+                <li v-for="task in tasks" >
+                    <span :class="{ 'text-decoration-line-through' : task.done}" @click="task_done">
+                        {{task.text}}
+                    </span>
+                </li>
             </ul>
         </div>
     </div>

@@ -5,10 +5,8 @@ createApp({
     return {
         tasks: null,
         api_url: 'getTask.php',
-        new_text: { 
-            newTask: '',
-            done: false
-    }
+        newTask: ''
+           
            
         
     }
@@ -36,6 +34,10 @@ createApp({
         })
 
     },
+
+    task_done(){
+        console.log('ciao');
+    }
   },
   mounted(){
     axios
