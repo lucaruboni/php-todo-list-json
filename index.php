@@ -49,8 +49,8 @@ Bonus -->
           
 
             <ul>
-                <li v-for="task in tasks" class="d-flex justify-content-between gap-5">
-                    <span :class="{ 'text-decoration-line-through' : task.done}" @click="task_done()">
+                <li v-for="(task, index) in tasks" class="d-flex justify-content-between gap-5">
+                    <span :class="{ 'text-decoration-line-through' : task.done}" @click="task_done(index)">
                         {{task.text}}
                     </span>
                     <div class="icon_container" @click="delete-task">

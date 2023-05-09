@@ -19,7 +19,7 @@ createApp({
       console.log('add a new task to the list');
 
       const data = {
-        new_task: this.data
+        new_task: this.newTask
       }
 
       axios.post(
@@ -59,10 +59,10 @@ createApp({
   
       },
  */
-    task_done(){
+    task_done(index){
       
         const data = {
-            done: this.data.done
+            done: this.data
           }
     
           axios.post(
@@ -83,7 +83,7 @@ createApp({
     axios
     .get(this.api_url)
     .then(response =>{
-        console.log(response);
+        console.log(response.data);
         this.tasks = response.data
     })
     .catch(error => {
