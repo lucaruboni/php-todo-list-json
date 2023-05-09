@@ -5,7 +5,11 @@ createApp({
     return {
         tasks: null,
         api_url: 'getTask.php',
-        newTask: ''
+        new_text: { 
+            newTask: '',
+            done: false
+    }
+           
         
     }
   },
@@ -15,7 +19,7 @@ createApp({
       console.log('add a new task to the list');
 
       const data = {
-        new_task: this.newTask
+        new_task: this.data
       }
 
       axios.post(
